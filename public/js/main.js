@@ -53,7 +53,7 @@ $(".header_area").html(`
             <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
 
 
-              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
               <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
               <li class="nav-item"><a class="nav-link" href="/products?promotions=true">Promotions</a></li>
               <li class="nav-item"><a class="nav-link" href="/categories">Categories</a></li>
