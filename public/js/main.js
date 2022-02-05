@@ -1,76 +1,6 @@
 $(function () {
-  "use strict";
-
-  //------- Parallax -------//
-  skrollr.init({
-    forceHeight: false
-  });
-
   //------- Active Nice Select --------//
   $('select').niceSelect();
-
-  //------- hero carousel -------//
-  $(".hero-carousel").owlCarousel({
-    items: 3,
-    margin: 10,
-    autoplay: false,
-    autoplayTimeout: 5000,
-    loop: true,
-    nav: false,
-    dots: false,
-    responsive: {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 2
-      },
-      810: {
-        items: 3
-      }
-    }
-  });
-
-  //------- Best Seller Carousel -------//
-  if ($('.owl-carousel').length > 0) {
-    $('#bestSellerCarousel').owlCarousel({
-      loop: true,
-      margin: 30,
-      nav: true,
-      navText: ["<i class='ti-arrow-left'></i>", "<i class='ti-arrow-right'></i>"],
-      dots: false,
-      responsive: {
-        0: {
-          items: 1
-        },
-        600: {
-          items: 2
-        },
-        900: {
-          items: 3
-        },
-        1130: {
-          items: 4
-        }
-      }
-    })
-  }
-
-  //------- single product area carousel -------//
-  $(".s_Product_carousel").owlCarousel({
-    items: 1,
-    autoplay: false,
-    autoplayTimeout: 5000,
-    loop: true,
-    nav: false,
-    dots: false
-  });
-
-  //------- mailchimp --------//  
-  function mailChimp() {
-    $('#mc_embed_signup').find('form').ajaxChimp();
-  }
-  mailChimp();
 
   //------- fixed navbar --------//  
   $(window).scroll(function () {
@@ -80,39 +10,6 @@ $(function () {
     if (scroll >= 100) sticky.addClass('fixed');
     else sticky.removeClass('fixed');
   });
-
-  //------- Price Range slider -------//
-  if (document.getElementById("price-range")) {
-
-    var nonLinearSlider = document.getElementById('price-range');
-
-    noUiSlider.create(nonLinearSlider, {
-      connect: true,
-      behaviour: 'tap',
-      start: [500, 4000],
-      range: {
-        // Starting at 500, step the value by 500,
-        // until 4000 is reached. From there, step by 1000.
-        'min': [0],
-        '10%': [500, 500],
-        '50%': [4000, 1000],
-        'max': [10000]
-      }
-    });
-
-
-    var nodes = [
-      document.getElementById('lower-value'), // 0
-      document.getElementById('upper-value') // 1
-    ];
-
-    // Display the slider value and how far the handle moved
-    // from the left edge of the slider.
-    nonLinearSlider.noUiSlider.on('update', function (values, handle, unencoded, isTap, positions) {
-      nodes[handle].innerHTML = values[handle];
-    });
-
-  }
 
 });
 
@@ -137,6 +34,8 @@ function HasTokenExpired(localStorage, keyName) {
 
 }
 
+// Sets the navbar automatically each page
+
 $(".header_area").html(`
 
 <div class="main_menu">
@@ -154,7 +53,7 @@ $(".header_area").html(`
             <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
 
 
-              <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
               <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
               <li class="nav-item"><a class="nav-link" href="/products?promotions=true">Promotions</a></li>
               <li class="nav-item"><a class="nav-link" href="/categories">Categories</a></li>
@@ -189,8 +88,75 @@ $(".header_area").html(`
     </div>
 `)
 
-// Create this button on every page
+// Sets the footer automatically each page
+$(".footer-area").html(`
+<div class="container">
+				<div class="row section_gap">
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="single-footer-widget tp_widgets ">
+							<h4 class="footer_title large_title">Our Mission</h4>
+							<p>
+                At SP IT, We specialise in providing the best IT solutions to our customers. We are a team of highly skilled and experienced IT professionals who are passionate about delivering the best IT solutions to our customers. 
+              </p>
+						</div>
+					</div>
+					<div class="offset-lg-1 col-lg-2 col-md-6 col-sm-6">
+						<div class="single-footer-widget tp_widgets">
+							<h4 class="footer_title">Quick Links</h4>
+							<ul class="list">
+								<li><a href="/Home</a></li>
+								<li><a href="/products">Products</a></li>
+								<li><a href="/products?promotions=true">Promotions</a></li>
+								<li><a href="/categories">Categories</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="offset-lg-1 col-lg-3 col-md-6 col-sm-6">
+						<div class="single-footer-widget tp_widgets">
+							<h4 class="footer_title">Contact Us</h4>
+							<div class="ml-40">
+								<p class="sm-head">
+									<span class="fa fa-location-arrow"></span>
+									Head Office
+								</p>
+								<p>500 Dover Road, Singapore 139651</p>
 
+								<p class="sm-head">
+									<span class="fa fa-phone"></span>
+									Phone Number
+								</p>
+								<p>
+                  +65 6775 1133
+								</p>
+
+								<p class="sm-head">
+									<span class="fa fa-envelope"></span>
+									Email
+								</p>
+								<p>
+                contactus@sp.edu.sg
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row d-flex">
+					<p class="col-lg-12 footer-text text-center">
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						Copyright &copy;<script>
+							document.write(new Date().getFullYear());
+						</script> All rights reserved | This template is made with <i class="fa fa-heart"
+							aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</p>
+				</div>
+			</div>
+`)
 
 // Check if there is a token in local storage
 if (!HasTokenExpired(localStorage, "expires")) {
