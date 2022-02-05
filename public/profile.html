@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile</title>
+    <link rel="icon" href="img/Fevicon.png" type="image/png">
+    <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="vendors/linericon/style.css">
+    <link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendors/nice-select/nice-select.css">
+    <link rel="stylesheet" href="vendors/nouislider/nouislider.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!--================ Start Header Menu Area =================-->
+    <header class="header_area">
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Shop</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="category.html">Shop Category</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="single-product.html">Blog Details</a>
+                                    </li>
+                                    <li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a>
+                                    </li>
+                                    <li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a>
+                                    </li>
+                                    <li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Blog</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item active submenu dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Pages</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="tracking-order.html">Tracking</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        </ul>
+
+                        <ul class="nav-shop">
+                            <li class="nav-item"><button><i class="ti-search"></i></button></li>
+                            <li class="nav-item"><button><i class="ti-shopping-cart"></i><span
+                                        class="nav-shop__circle">3</span></button> </li>
+                            <li class="nav-item"><a class="button button-header" href="#">Buy Now</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--================ End Header Menu Area =================-->
+
+    <!--================Login Box Area =================-->
+    <section class="section-margin">
+        <div class="container">
+
+
+
+            <div class="row">
+                <!-- Update Form -->
+                <div class="col-lg-6">
+
+                    <div id="profilePicDisplayContainer" style="display: none;">
+                        <img src="" alt="Profile Picture" id="profilePicDisplay" class="img-fluid rounded-circle"
+                            width="128" height="128">
+                    </div>
+
+                    <h3>Hi, <span id="headerUsername"></span></h3>
+                    <h4>Edit your profile</h4>
+
+                    <p class="text-danger" id="errorMessage"></p>
+                    <form id="updateProfile">
+
+                        <div class="form-group">
+
+                            <label for="profile_picture">Profile Picture (JPG/PNG, 1MB Limit)</label>
+                            <input type="file" class="form-control-file" name="profile_picture" id="profile_picture">
+                        </div>
+
+                        <div class="form-group">
+                            <input placeholder="Username" type="text" class="form-control" id="username">
+                        </div>
+
+                        <div class="form-group">
+
+                            <input placeholder="Email" type="email" class="form-control" id="email">
+                        </div>
+
+                        <div class="form-group">
+
+                            <input placeholder="Contact" type="tel" class="form-control" id="contact">
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <input placeholder="New Password" type="text" class="form-control" id="password">
+                        </div>
+
+                        <div class="form-group">
+                            <button class="button button-login w-100" id="submitButton">
+                                Update my profile
+                            </button>
+
+
+                        </div>
+                    </form>
+
+                    <a href="/logout" class="button button-register w-100" id="logoutButton">
+                        Logout
+                    </a>
+
+                </div>
+
+                <div class="col-lg-6">
+                    <h3>Categories you're interested in</h3>
+
+                    <form action="" id="interestsForm">
+                        <div class="interests">
+
+                        </div>
+                        <button class="button button-login w-100" id="interestSubmitButton">
+                            Update my interests
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+
+
+            <div class="my-5">
+
+                <h4>Past Purchases</h4>
+
+                <div id="purchaseItem">
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--================End Login Box Area =================-->
+
+
+
+    <!--================ Start footer Area  =================-->
+    <footer>
+        <div class="footer-area footer-only">
+            <div class="container">
+                <div class="row section_gap">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-footer-widget tp_widgets ">
+                            <h4 class="footer_title large_title">Our Mission</h4>
+                            <p>
+                                So seed seed green that winged cattle in. Gathering thing made fly you're no
+                                divided deep moved us lan Gathering thing us land years living.
+                            </p>
+                            <p>
+                                So seed seed green that winged cattle in. Gathering thing made fly you're no divided
+                                deep moved
+                            </p>
+                        </div>
+                    </div>
+                    <div class="offset-lg-1 col-lg-2 col-md-6 col-sm-6">
+                        <div class="single-footer-widget tp_widgets">
+                            <h4 class="footer_title">Quick Links</h4>
+                            <ul class="list">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Shop</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Product</a></li>
+                                <li><a href="#">Brand</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6">
+                        <div class="single-footer-widget instafeed">
+                            <h4 class="footer_title">Gallery</h4>
+                            <ul class="list instafeed d-flex flex-wrap">
+                                <li><img src="img/gallery/r1.jpg" alt=""></li>
+                                <li><img src="img/gallery/r2.jpg" alt=""></li>
+                                <li><img src="img/gallery/r3.jpg" alt=""></li>
+                                <li><img src="img/gallery/r5.jpg" alt=""></li>
+                                <li><img src="img/gallery/r7.jpg" alt=""></li>
+                                <li><img src="img/gallery/r8.jpg" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="offset-lg-1 col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-footer-widget tp_widgets">
+                            <h4 class="footer_title">Contact Us</h4>
+                            <div class="ml-40">
+                                <p class="sm-head">
+                                    <span class="fa fa-location-arrow"></span>
+                                    Head Office
+                                </p>
+                                <p>123, Main Street, Your City</p>
+
+                                <p class="sm-head">
+                                    <span class="fa fa-phone"></span>
+                                    Phone Number
+                                </p>
+                                <p>
+                                    +123 456 7890 <br>
+                                    +123 456 7890
+                                </p>
+
+                                <p class="sm-head">
+                                    <span class="fa fa-envelope"></span>
+                                    Email
+                                </p>
+                                <p>
+                                    free@infoexample.com <br>
+                                    www.infoexample.com
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row d-flex">
+                    <p class="col-lg-12 footer-text text-center">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>
+                            document.write(new Date().getFullYear());
+                        </script> All rights reserved | This template is made with <i class="fa fa-heart"
+                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--================ End footer Area  =================-->
+
+
+    <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="vendors/skrollr.min.js"></script>
+    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="vendors/nice-select/jquery.nice-select.min.js"></script>
+    <script src="vendors/jquery.ajaxchimp.min.js"></script>
+    <script src="vendors/mail-script.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        if (HasTokenExpired(localStorage, "expires")) {
+            // Redirect to login
+            window.location.href = "/login";
+        }
+
+        $(document).ready(async function () {
+            console.log("Done")
+
+            let user = {};
+
+            // Get username, email, contact and password
+            let username = $("#username");
+            let email = $("#email");
+            let contact = $("#contact");
+            let password = $("#password");
+
+            let token = localStorage.getItem("token");
+            let userid = localStorage.getItem("userid");
+
+            const form = $("#updateProfile")[0];
+
+            try {
+                // Fetch the profile of the user
+                const profileResponse = await fetch(`${BACKEND_URL}/users/${userid}`, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                    }
+                })
+
+                if (!profileResponse.ok) {
+                    throw new Error(profileResponse.status)
+                }
+
+                const profile = (await profileResponse.json())[0];
+
+                if (profile.profile_pic_url) {
+                    $("#profilePicDisplayContainer").show()
+                    $("#profilePicDisplay").attr("src", profile.profile_pic_url);
+                }
+
+                // Set the profile data
+                username.val(profile.username);
+                $("#headerUsername").text(profile.username);
+                email.val(profile.email);
+                contact.val(profile.contact);
+
+                user = profile;
+
+            } catch (e) {
+                console.log(e)
+            }
+
+
+            // Fetch all categories
+            try {
+                const categoriesResponse = await fetch(`${BACKEND_URL}/category`, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    }
+                })
+
+                if (!categoriesResponse.ok) {
+                    throw new Error(categoriesResponse.status)
+                }
+
+                const categories = await categoriesResponse.json();
+
+                console.log(categories)
+
+                $(".interests").empty()
+
+                // Add all categories to the select
+                categories.forEach(({
+                    categoryid,
+                    category
+                }) => {
+
+                    $(".interests").append(`
+                       
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="${categoryid}" id="check-${categoryid}">
+                        <label class="form-check-label" for="check-${category}">
+                            ${category}
+                        </label>
+
+                    </div>
+
+                        `)
+
+                })
+
+            } catch (e) {
+                console.log(e)
+            }
+
+            // Fetch all cart purchases
+            fetch(`${BACKEND_URL}/cart`, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    }
+                }).then(res => res.json())
+                .then(data => {
+
+                    if (data.length == 0) {
+                        $("#purchaseItem").html(`
+                            <h5>No purchases found! Shop now!</h5> 
+                        `)
+                    }
+                    data.reverse().forEach(cartItem => {
+                        const {
+                            productid,
+                            quantity,
+                            price,
+                            created_at,
+                            name
+                        } = cartItem;
+                        $("#purchaseItem").append(`
+                                <div class="item my-5">
+                        <h5>${quantity}x ${name}</h5>
+                    <h6>$${roundToTwo(quantity * price)}</h6>
+                    <p>${created_at}</p>
+                    </div>
+                        `)
+
+                    })
+                }).catch(e => {
+                    console.log(e)
+                    $("#errorMessage").text("Theres an error fetching purchases")
+                })
+
+            // Fetch the user interests
+            try {
+                const interestsResponse = await fetch(`${BACKEND_URL}/interest`, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    }
+                })
+
+                if (!interestsResponse.ok) {
+                    throw new Error(interestsResponse.status)
+                }
+
+                const interests = await interestsResponse.json();
+
+                // Check the interests
+                interests.forEach(({
+                    categoryid,
+                    category
+                }) => {
+                    $(`#check-${categoryid}`).prop("checked", true);
+                })
+
+            } catch (e) {
+                console.log(e)
+            }
+
+            $("#interestsForm").submit(async e => {
+                e.preventDefault();
+
+                // Get all the checkbox values
+                const interests = $(".interests input:checked").map(function () {
+                    return $(this).val();
+                }).get();
+
+                // Fetch the update interests endpoint
+                try {
+                    const interestsResponse = await fetch(`${BACKEND_URL}/interest/${userid}`, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Authorization": `Bearer ${token}`
+                        },
+                        body: JSON.stringify({
+                            categoryids: interests.join(",")
+                        })
+                    })
+
+                    if (!interestsResponse.ok) {
+                        throw new Error(interestsResponse.status)
+                    }
+
+                    // Refresh the page
+                    window.location.reload();
+
+                } catch (e) {
+                    console.log(e)
+                }
+            })
+
+
+
+            $("#updateProfile").submit(async e => {
+                console.log("Submitting")
+
+
+                e.preventDefault();
+
+
+                // Clear the error message
+                $("#errorMessage").text("");
+
+                // Clear any text inside errorMessage
+                $("#errorMessage").text("");
+
+
+                try {
+
+
+                    const updateResponse = await fetch(`${BACKEND_URL}/users/${userid}`, {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Authorization": `Bearer ${token}`
+                        },
+                        body: JSON.stringify({
+                            username: username.val(),
+                            email: email.val(),
+                            contact: contact.val(),
+                            password: password.val(),
+                            type: localStorage.getItem("type")
+                        })
+                    })
+
+                    if (!updateResponse.ok) {
+                        throw new Error(updateResponse.status)
+                    }
+
+                    let formData = new FormData(form);
+                    let pic = formData.get("profile_picture")
+
+                    // Check if there is a file in formData
+                    if (pic.size != 0) {
+
+                        $("#errorMessage").text("Updating Profile Picture, Hold on!");
+
+                        // There is data
+                        console.log("Updating profile picture")
+
+                        try {
+                            const updatePictureResponse = await fetch(
+                                `${BACKEND_URL}/users/${userid}/image`, {
+                                    method: "POST",
+                                    headers: {
+                                        "Authorization": `Bearer ${token}`,
+                                    },
+                                    body: formData,
+                                })
+
+                            if (!updatePictureResponse.ok) {
+                                throw new Error(updatePictureResponse.status)
+                            }
+                            // Refresh the page
+                            if (password.val().length > 0) {
+                                console.log("User changed password!")
+                                // There is a new password, then logout the user
+                                window.location.href = "/logout";
+                            } else {
+                                window.location.reload();
+                            }
+
+
+                        } catch (e) {
+                            if (e.message == 415) {
+                                $("#errorMessage").text(
+                                    "Only png and jpeg files are accepted")
+                            }
+
+                            if (e.message == 500) {
+                                $("#errorMessage").text("Something went wrong!")
+                            }
+
+                            if (e.message == 413) {
+                                $("#errorMessage").text("File is too large!")
+                            }
+                        }
+                    } else {
+                        // Refresh the page
+                        if (password.val().length > 0) {
+                            console.log("User changed password!")
+                            // There is a new password, then logout the user
+                            window.location.href = "/logout";
+                        } else {
+                            window.location.reload();
+                        }
+                    }
+
+
+                } catch (e) { // Catch for update profile
+                    console.log(e)
+                    if (e.message == 500) {
+                        $("#errorMessage").text("Something went wrong");
+                    } else if (e.message == 400) {
+                        $("#errorMessage").text("Do not leave any blanks!");
+                    } else if (e.message == 422) {
+                        $("#errorMessage").text("Email or username already exists!");
+                    }
+                }
+
+            })
+        })
+    </script>
+</body>
+
+</html>
